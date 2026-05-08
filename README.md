@@ -1,179 +1,195 @@
-# 🪵 Kashta-Kala — Android App
-## MindMatrix VTU Internship — Project Title 62
+🪵 Kashta-Kala — Digital Design Catalog for Carpenters
+📖 Table of Contents
 
-A native Android app (Java + Room DB + RecyclerView) for carpenters to browse furniture designs,
-estimate material costs, save price quotes, and showcase their portfolio.
+Problem Statement
+The Vision
+Features
+Tech Stack
+Project Structure
+Estimation Formula
+Setup & Installation
+Running the App
+Screenshots
+Impact Goals
+VTU Success Criteria
+Contributing
+License
 
----
 
-## 📁 Project Structure
+🔴 Problem Statement
+Small-town carpenters and furniture makers are highly skilled but struggle to present modern furniture designs to their customers. They typically rely on:
 
-```
+Outdated printed catalogs
+Verbal descriptions and hand sketches
+The customer's imagination
+
+This leads to miscommunication, dissatisfaction, and lost business. On top of that, manually calculating material requirements and costs is slow and error-prone.
+
+💡 The Vision
+Kashta-Kala is a "Digital Design Catalog for Carpenters" — a professional sales tool built for the local artisan.
+The app comes pre-loaded with modern furniture designs and enables carpenters to:
+
+Show high-quality design photos to customers on the spot
+Instantly estimate the wood required and calculate a rough cost
+Save customer quotes for future reference
+Showcase their own finished work through a personal portfolio
+
+
+Professionalizing the local carpentry business — one quote at a time.
+
+
+✨ Features
+ScreenDescription🏠 DashboardLive business stats — total designs, favourites, quotes given, revenue quoted🛋️ Design CatalogGrid of high-quality furniture photos (Sofa, Bed, Cabinet, Table) with category filters and ❤️ favourite toggle📐 Material EstimatorInput dimensions → app calculates square feet of wood needed, wood cost, labour cost, and total estimate📋 Price QuotesSave customer quotes to Room DB; view breakdown of wood + labour costs; delete old quotes🖼️ My PortfolioCarpenter adds photos of their own finished work to build credibility with customers
+
+🛠 Tech Stack
+LayerTechnologyLanguageJavaUIXML Layouts, ConstraintLayout, CardViewNavigationBottom Navigation View + Fragment ManagerImage LoadingGlide 4.16Local DatabaseRoom DB (SQLite abstraction)ArchitectureMVVM — ViewModel + LiveData + RepositoryListsRecyclerView with ListAdapter + DiffUtilBuild SystemGradle 8.2Min SDKAPI 24 (Android 7.0)Target SDKAPI 34 (Android 14)
+
+📁 Project Structure
 KashtaKala/
 ├── app/
-│   ├── build.gradle                          ← App dependencies
+│   ├── build.gradle
 │   └── src/main/
 │       ├── AndroidManifest.xml
 │       ├── java/com/kashta/kala/
 │       │   ├── MainActivity.java             ← Bottom nav host
-│       │   ├── KashtaViewModel.java          ← ViewModel (LiveData)
-│       │   ├── KashtaRepository.java         ← Data layer
-│       │   ├── AddQuoteActivity.java
-│       │   ├── AddPortfolioActivity.java
+│       │   ├── KashtaViewModel.java          ← LiveData ViewModel
+│       │   ├── KashtaRepository.java         ← Single source of truth
+│       │   ├── AddQuoteActivity.java         ← New quote form
+│       │   ├── AddPortfolioActivity.java     ← Add portfolio item
+│       │   │
 │       │   ├── database/
-│       │   │   ├── KashtaDatabase.java       ← Room DB singleton
+│       │   │   ├── KashtaDatabase.java       ← Room DB singleton + seeder
 │       │   │   ├── entities/
-│       │   │   │   ├── Design.java
-│       │   │   │   ├── PriceQuote.java
-│       │   │   │   └── PortfolioItem.java
+│       │   │   │   ├── Design.java           ← Furniture design entity
+│       │   │   │   ├── PriceQuote.java       ← Customer quote entity
+│       │   │   │   └── PortfolioItem.java    ← Portfolio entity
 │       │   │   └── dao/
-│       │   │       ├── DesignDao.java
-│       │   │       ├── PriceQuoteDao.java
-│       │   │       └── PortfolioDao.java
+│       │   │       ├── DesignDao.java        ← CRUD + filter queries
+│       │   │       ├── PriceQuoteDao.java    ← Insert, delete, aggregate
+│       │   │       └── PortfolioDao.java     ← Insert, delete
+│       │   │
 │       │   ├── fragments/
 │       │   │   ├── DashboardFragment.java
-│       │   │   ├── CatalogFragment.java      ← RecyclerView Grid
-│       │   │   ├── EstimatorFragment.java    ← Math logic
+│       │   │   ├── CatalogFragment.java      ← RecyclerView Grid + chips
+│       │   │   ├── EstimatorFragment.java    ← Core math logic
 │       │   │   ├── QuotesFragment.java
 │       │   │   └── PortfolioFragment.java
+│       │   │
 │       │   ├── adapters/
-│       │   │   ├── DesignAdapter.java        ← Glide + ListAdapter
+│       │   │   ├── DesignAdapter.java        ← Glide image loading
 │       │   │   ├── QuoteAdapter.java
 │       │   │   └── PortfolioAdapter.java
+│       │   │
 │       │   └── utils/
-│       │       └── WoodHelper.java           ← Estimation formulas
+│       │       └── WoodHelper.java           ← All estimation formulas
+│       │
 │       └── res/
-│           ├── layout/                       ← All XML layouts
-│           ├── values/                       ← colors, strings, themes
-│           ├── drawable/                     ← Custom backgrounds
-│           └── menu/bottom_nav_menu.xml
+│           ├── layout/                       ← 10 XML layout files
+│           ├── values/                       ← colors.xml, strings.xml, themes.xml
+│           ├── drawable/                     ← Custom shape drawables
+│           ├── color/                        ← Nav color selector
+│           └── menu/
+│               └── bottom_nav_menu.xml
+│
 ├── build.gradle
 ├── settings.gradle
 └── gradle.properties
-```
 
----
-
-## 🚀 STEP-BY-STEP: Open & Run in Android Studio
-
-### Step 1 — Prerequisites
-- Install **Android Studio Hedgehog (2023.1.1)** or newer
-  → https://developer.android.com/studio
-- Ensure you have **JDK 17** (bundled with Android Studio)
-- Internet connection (for Gradle sync + Glide image loading)
-
----
-
-### Step 2 — Open the Project
-1. Unzip `KashtaKala.zip` to a folder (e.g. `C:\Projects\KashtaKala`)
-2. Open **Android Studio**
-3. Click **"Open"** (not "New Project")
-4. Navigate to and select the **`KashtaKala`** folder (the one with `settings.gradle`)
-5. Click **OK**
-
----
-
-### Step 3 — Gradle Sync
-Android Studio will auto-detect the project and start syncing.
-- Wait for **"Gradle sync finished"** in the bottom status bar
-- If it asks to upgrade AGP (Android Gradle Plugin), click **"Don't remind me"** or upgrade
-
-**If sync fails:**
-```
-File → Invalidate Caches → Invalidate and Restart
-```
-Then sync again via: **File → Sync Project with Gradle Files**
-
----
-
-### Step 4 — Run on Emulator
-
-**Option A: Use existing emulator**
-1. Click **Tools → Device Manager**
-2. If no emulator exists, click **"Create Device"**
-3. Choose **Pixel 6** → Next → Select **API 33 (Android 13)** → Download if needed → Finish
-4. Click ▶ (Run) button or press **Shift+F10**
-5. Select your emulator → OK
-
-**Option B: Run on your physical Android phone**
-1. On your phone: **Settings → About Phone → tap "Build Number" 7 times** (enables Developer Mode)
-2. **Settings → Developer Options → USB Debugging → Enable**
-3. Connect phone to PC via USB
-4. In Android Studio, select your device from the dropdown
-5. Click ▶ Run
-
----
-
-### Step 5 — First Launch
-On first launch:
-- The Room DB auto-creates with **8 pre-seeded furniture designs**
-- Images load from the internet via Glide (needs WiFi/data)
-- All other features (Estimator, Quotes, Portfolio) work fully offline
-
----
-
-## 📱 App Features
-
-| Screen | What It Does |
-|--------|-------------|
-| 🏠 Dashboard | Stats: total designs, quotes, portfolio count, revenue |
-| 🛋️ Catalog | Grid of furniture photos, category filter chips, ❤️ favourite toggle |
-| 📐 Estimator | Enter dimensions → auto-calculates sqft, wood cost, labour cost |
-| 📋 Quotes | Save customer quotes to Room DB, delete, view summary |
-| 🖼️ Portfolio | Add/remove your finished work photos |
-
----
-
-## 🪵 Estimation Formula (WoodHelper.java)
-
-```
-Square Feet  = Length × Width
-Cubic Feet   = Length × Width × Height  (if height given)
+🪵 Estimation Formula
+All material calculations live in WoodHelper.java:
+javaSquare Feet  = Length (ft) × Width (ft)
+Cubic Feet   = Length × Width × Height   // only if height is provided
 Wood Cost    = Square Feet × Wood Price per sqft
-Labour Cost  = Square Feet × Labour Rate (default ₹200/sqft)
+Labour Cost  = Square Feet × Labour Rate  // default ₹200/sqft
 Total Cost   = Wood Cost + Labour Cost
-```
+Wood Type Pricing Table
+Wood Type₹ / sqftDensityDurabilityTeak₹850HighExcellentSheesham₹600Medium-HighVery GoodSal₹500HighVery GoodMango₹400MediumGoodPine₹300Low-MediumFairBamboo₹250MediumGood
 
-| Wood Type | ₹/sqft | Durability |
-|-----------|--------|-----------|
-| Teak      | 850    | Excellent |
-| Sheesham  | 600    | Very Good |
-| Sal       | 500    | Very Good |
-| Mango     | 400    | Good      |
-| Pine      | 300    | Fair      |
-| Bamboo    | 250    | Good      |
+⚙️ Setup & Installation
+Prerequisites
 
----
+Android Studio Hedgehog (2023.1.1) or newer
+JDK 17 (bundled with Android Studio)
+Internet connection for Gradle sync and Glide image loading
 
-## 🔧 Common Issues & Fixes
+Clone the Repository
+bashgit clone https://github.com/shrethan/kashta-kala-self-employment-.git
+cd kashta-kala-self-employment-
+Open in Android Studio
 
-| Problem | Fix |
-|---------|-----|
-| Gradle sync fails | File → Invalidate Caches → Restart |
-| `minSdk` error | Ensure emulator is API 24+ |
-| Images not loading | Check internet connection; Glide needs INTERNET permission (already in Manifest) |
-| Build error "cannot find symbol" | Build → Clean Project → Rebuild Project |
-| Room DB error | Uninstall app from emulator and reinstall (DB schema changed) |
-| `ViewBinding not found` | Ensure `buildFeatures { viewBinding true }` in app/build.gradle |
+Launch Android Studio
+Click File → Open
+Select the cloned kashta-kala-self-employment- folder (the one containing settings.gradle)
+Click OK and wait for Gradle sync to complete (~2–5 minutes on first run)
 
----
 
-## 📦 Build APK for Submission
+Sync failed? Go to File → Invalidate Caches → Invalidate and Restart, then File → Sync Project with Gradle Files
 
-1. **Build → Generate Signed Bundle / APK**
-2. Choose **APK**
-3. Create a new keystore (fill in details, remember password)
-4. Select **release** build variant
-5. Click **Finish**
-6. APK will be at: `app/release/app-release.apk`
 
----
+▶️ Running the App
+On an Emulator
 
-## ✅ VTU Success Criteria Checklist
+Go to Tools → Device Manager
+Click Create Device → Choose Pixel 6 → API 33 (Android 13)
+Download the system image if prompted, then click Finish
+Press Shift + F10 or click the ▶ Run button
 
-- [x] Material Estimator with accurate formulas (sqft, cubic ft, wood + labour cost)
-- [x] Multiple wood types handled (Teak, Sheesham, Mango, Pine, Sal, Bamboo)
-- [x] Design gallery with Favouriting support
-- [x] Visual-heavy UI with large images (RecyclerView + Glide)
-- [x] Price Quotes saved in Room DB
-- [x] Portfolio section for carpenter's own photos
+On a Physical Android Device
+
+Enable Developer Options: Settings → About Phone → tap Build Number 7 times
+Enable USB Debugging: Settings → Developer Options → USB Debugging
+Connect your phone via USB
+Select your device from the Android Studio device dropdown
+Press Shift + F10
+
+First Launch Behaviour
+
+Room DB auto-creates and seeds 8 furniture designs on first install
+Images load via Glide over the internet (WiFi recommended)
+Estimator, Quotes, and Portfolio work fully offline
+
+
+📸 Screenshots
+
+Add your screenshots here after running the app
+
+DashboardDesign CatalogEstimatorPrice QuotesPortfolio(Add screenshot)(Add screenshot)(Add screenshot)(Add screenshot)(Add screenshot)
+
+🎯 Impact Goals
+GoalDescription💼 Micro-Business TechGives local artisans tools to compete with large furniture brands♻️ Resource EfficiencyAccurate estimation reduces wood wastage🤝 Customer TrustProfessional quotes and design options build better business relationships
+
+✅ VTU Success Criteria Checklist
+
+ Material Estimator is accurate and handles multiple wood types
+ Design gallery supports Favouriting designs
+ UI is visual-heavy with clean, large images via RecyclerView + Glide
+ Price Quotes are saved in Room DB for future reference
+ Portfolio section allows carpenter to add and remove finished work photos
+ MVVM architecture with LiveData for reactive UI updates
+ Math logic correctly computes square feet and cubic feet
+
+
+🔧 Troubleshooting
+ProblemSolutionGradle sync failsFile → Invalidate Caches → RestartminSdk version errorEnsure your emulator/device is API 24+Images not loadingCheck internet connection — Glide requires the INTERNET permission (already declared in AndroidManifest.xml)cannot find symbol build errorBuild → Clean Project → Rebuild ProjectRoom DB migration errorUninstall the app from the emulator/device and reinstallViewBinding not resolvingConfirm buildFeatures { viewBinding true } is in app/build.gradle
+
+📦 Building a Release APK
+
+Go to Build → Generate Signed Bundle / APK
+Select APK → Next
+Create a new keystore (note your alias and password)
+Select release build variant → Finish
+APK location: app/release/app-release.apk
+
+
+🤝 Contributing
+
+Fork the repository
+Create your feature branch: git checkout -b feature/your-feature-name
+Commit your changes: git commit -m "Add: your feature description"
+Push to the branch: git push origin feature/your-feature-name
+Open a Pull Request
+
+
+👨‍💻 Author
+Shrethan
+GitHub: @shrethan
