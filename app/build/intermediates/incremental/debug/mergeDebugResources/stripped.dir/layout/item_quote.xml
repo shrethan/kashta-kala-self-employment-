@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="6dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:cardBackgroundColor="@android:color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Top Row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:gravity="center_vertical" android:layout_marginBottom="8dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:id="@+id/tv_customer_name" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="15sp" android:textStyle="bold" android:textColor="@color/wood_dark"/>
+                <TextView android:id="@+id/tv_design_name" android:layout_width="wrap_content" android:layout_height="wrap_content"
+                    android:textSize="12sp" android:textColor="@color/wood_muted"/>
+            </LinearLayout>
+            <TextView android:id="@+id/tv_total_cost"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:textSize="18sp" android:textStyle="bold" android:textColor="@color/wood_amber"/>
+        </LinearLayout>
+
+        <!-- Details Row -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="6dp">
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:textSize="11sp" android:textColor="@color/wood_muted" android:text="Wood"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:textSize="11sp" android:textColor="@color/wood_muted" android:text="Dimensions"/>
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:textSize="11sp" android:textColor="@color/wood_muted" android:text="Date"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <TextView android:id="@+id/tv_wood_type" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:textSize="12sp" android:textStyle="bold" android:textColor="@color/wood_dark"/>
+            <TextView android:id="@+id/tv_dimensions" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:textSize="12sp" android:textStyle="bold" android:textColor="@color/wood_dark"/>
+            <TextView android:id="@+id/tv_date" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1"
+                android:textSize="12sp" android:textColor="@color/wood_muted"/>
+        </LinearLayout>
+
+        <!-- Cost breakdown -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="@drawable/bg_wood_info" android:padding="10dp" android:orientation="horizontal"
+            android:layout_marginBottom="8dp">
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Wood" android:textSize="10sp" android:textColor="@color/wood_muted"/>
+                <TextView android:id="@+id/tv_wood_cost" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/wood_mid"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Labour" android:textSize="10sp" android:textColor="@color/wood_muted"/>
+                <TextView android:id="@+id/tv_labor_cost" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/wood_mid"/>
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Total" android:textSize="10sp" android:textColor="@color/wood_muted"/>
+                <TextView android:id="@+id/tv_total_cost_breakdown" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textSize="13sp" android:textStyle="bold" android:textColor="@color/wood_amber"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView android:id="@+id/tv_notes" android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:textSize="12sp" android:textColor="@color/wood_muted" android:layout_marginBottom="8dp" android:visibility="gone"/>
+
+        <Button android:id="@+id/btn_delete"
+            android:layout_width="wrap_content" android:layout_height="36dp"
+            android:text="Delete"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:textColor="@color/error_red"
+            app:strokeColor="@color/error_red"/>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

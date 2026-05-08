@@ -1,0 +1,90 @@
+[
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/mipmap-hdpi_ic_launcher.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/mipmap-hdpi/ic_launcher.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_activity_add_portfolio.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/activity_add_portfolio.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/drawable_bg_category_chip.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/drawable/bg_category_chip.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_activity_design_detail.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/activity_design_detail.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/drawable_bg_input.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/drawable/bg_input.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_fragment_dashboard.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_item_design.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/item_design.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_fragment_catalog.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_catalog.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_item_portfolio.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/item_portfolio.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_fragment_quotes.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_quotes.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_fragment_portfolio.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_portfolio.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/drawable_bg_fav_btn.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/drawable/bg_fav_btn.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_item_quote.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/item_quote.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/drawable_ic_wood_placeholder.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/drawable/ic_wood_placeholder.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/color_nav_item_color.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/color/nav_item_color.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/mipmap-hdpi_ic_launcher_round.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/mipmap-hdpi/ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_fragment_estimator.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_estimator.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/drawable_bg_wood_info.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/drawable/bg_wood_info.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_activity_add_quote.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/activity_add_quote.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-merged_res-48:/layout_activity_main.xml.flat",
+        "source": "com.kashta.kala.app-main-50:/layout/activity_main.xml"
+    }
+]

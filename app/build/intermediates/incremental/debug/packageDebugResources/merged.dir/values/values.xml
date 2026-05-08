@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="accent_green">#4A7C59</color>
+    <color name="bg_cream">#FDF3E3</color>
+    <color name="divider">#E8C99A</color>
+    <color name="error_red">#C0392B</color>
+    <color name="nav_selected">#F5C87A</color>
+    <color name="nav_unselected">#99F5C87A</color>
+    <color name="surface_light">#FFF8EE</color>
+    <color name="wood_amber">#C87941</color>
+    <color name="wood_cream">#FDF3E3</color>
+    <color name="wood_dark">#1A0A00</color>
+    <color name="wood_deep">#2D1200</color>
+    <color name="wood_gold">#F5C87A</color>
+    <color name="wood_mid">#5C2A0E</color>
+    <color name="wood_muted">#8B6B4A</color>
+    <color name="wood_warm">#8B4513</color>
+    <string name="app_name">Kashta-Kala</string>
+    <string name="nav_catalog">Catalog</string>
+    <string name="nav_dashboard">Home</string>
+    <string name="nav_estimator">Estimate</string>
+    <string name="nav_portfolio">Portfolio</string>
+    <string name="nav_quotes">Quotes</string>
+    <style name="KashtaActionBar" parent="Widget.MaterialComponents.ActionBar.Solid">
+        <item name="background">@color/wood_dark</item>
+        <item name="titleTextStyle">@style/KashtaActionBarTitle</item>
+    </style>
+    <style name="KashtaActionBarTitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/wood_gold</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="Theme.KashtaKala" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">@color/wood_amber</item>
+        <item name="colorPrimaryVariant">@color/wood_mid</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">@color/wood_gold</item>
+        <item name="colorOnSecondary">@color/wood_dark</item>
+        <item name="android:colorBackground">@color/bg_cream</item>
+        <item name="android:statusBarColor">@color/wood_dark</item>
+        <item name="android:navigationBarColor">@color/wood_dark</item>
+        <item name="actionBarStyle">@style/KashtaActionBar</item>
+    </style>
+</resources>

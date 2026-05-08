@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/item_design.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/item_design.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/fragment_quotes.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_quotes.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/fragment_portfolio.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_portfolio.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/item_quote.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/item_quote.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/activity_add_portfolio.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/activity_add_portfolio.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/fragment_catalog.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_catalog.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/activity_main.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/fragment_dashboard.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_dashboard.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/activity_design_detail.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/activity_design_detail.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/item_portfolio.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/item_portfolio.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/activity_add_quote.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/activity_add_quote.xml"
+    },
+    {
+        "merged": "com.kashta.kala.app-mergeDebugResources-47:/layout/fragment_estimator.xml",
+        "source": "com.kashta.kala.app-main-50:/layout/fragment_estimator.xml"
+    }
+]
